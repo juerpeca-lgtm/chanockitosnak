@@ -1,4 +1,4 @@
-# Esquites al momento
+# Chanockitosnak
 
 Sitio estático, adaptable a móvil y listo para GitHub Pages. No requiere build ni dependencias.
 
