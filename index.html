@@ -10,13 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="orders.css">
+  <script src="order-config.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <div class="announcement"><span class="dot"></span> Preparados al momento · Pide directo por WhatsApp</div>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="Esquites al momento, inicio"><span class="brand-mark">🌽</span><span>ESQUITES<span class="brand-sub">AL MOMENTO</span></span></a>
-    <nav aria-label="Navegación principal"><a href="#menu">El menú</a><a href="#nosotros">Cómo pedir</a><a class="nav-cta whatsapp-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20esquites.%20%C2%BFMe%20compartes%20el%20men%C3%BA%2C%20precios%20y%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Pedir ahora <span>↗</span></a></nav>
+    <nav aria-label="Navegación principal"><a href="#menu">El menú</a><a href="#nosotros">Cómo pedir</a><a class="nav-cta" href="#pedido">Pedir ahora <span>↓</span></a></nav>
   </header>
   <main>
     <section class="hero" id="inicio">
@@ -24,7 +26,7 @@
         <p class="eyebrow"><span>ANTOJITO MEXICANO</span> · RECIÉN HECHO</p>
         <h1>Un antojo<br>que se disfruta <em>calientito.</em></h1>
         <p class="hero-text">Elige tu estilo, tu nivel de chile y tus toppings favoritos. Nosotros ponemos el maíz recién preparado.</p>
-        <div class="hero-actions"><a class="button button-primary whatsapp-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20esquites.%20%C2%BFMe%20compartes%20el%20men%C3%BA%2C%20precios%20y%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp <span>↗</span></a><a class="text-link" href="#menu">Ver opciones <span>↓</span></a></div>
+        <div class="hero-actions"><a class="button button-primary" href="#pedido">Hacer pedido <span>↓</span></a><a class="text-link" href="#menu">Ver opciones <span>↓</span></a></div>
         <div class="hero-note"><span class="stars">★★★★★</span><span>Hechos al momento y a tu gusto</span></div>
       </div>
       <div class="hero-art" aria-label="Ilustración de un vaso de esquites" role="img">
@@ -38,16 +40,35 @@
     <section class="menu-section section-wrap" id="menu">
       <div class="section-heading"><div><p class="eyebrow">TÚ PONES EL ANTOJO</p><h2>¿Cómo se te antoja?</h2></div><p class="heading-note">Escoge tu favorito y dinos cómo lo quieres. Te confirmamos disponibilidad y precio por WhatsApp.</p></div>
       <div class="menu-grid">
-        <article class="menu-card card-yellow"><div class="card-top"><span class="card-number">01</span><span class="card-emoji">🌽</span></div><h3>El clásico</h3><p>Maíz calientito con mayonesa, queso, limón y chile al gusto.</p><a class="order-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20El%20cl%C3%A1sico.%20%C2%BFMe%20compartes%20el%20precio%20y%20la%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Pedir este <span>↗</span></a></article>
-        <article class="menu-card card-pink"><div class="card-top"><span class="card-number">02</span><span class="card-emoji">🌶️</span></div><h3>Bien picosito</h3><p>Para quienes disfrutan el chilito. Tú decides cuánto aguanta el antojo.</p><a class="order-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20El%20picosito.%20%C2%BFMe%20compartes%20el%20precio%20y%20la%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Pedir este <span>↗</span></a></article>
-        <article class="menu-card card-green"><div class="card-top"><span class="card-number">03</span><span class="card-emoji">🧀</span></div><h3>Con todo</h3><p>Tu combinación favorita de toppings, hecha justo como la pediste.</p><a class="order-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20El%20esquite%20con%20todo.%20%C2%BFMe%20compartes%20el%20precio%20y%20la%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Pedir este <span>↗</span></a></article>
+        <article class="menu-card card-yellow"><div class="card-top"><span class="card-number">01</span><span class="card-emoji">🌽</span></div><h3>El clásico</h3><p>Maíz calientito con mayonesa, queso, limón y chile al gusto.</p><a class="order-link" href="#pedido" data-select-item="classic">Pedir este <span>↓</span></a></article>
+        <article class="menu-card card-pink"><div class="card-top"><span class="card-number">02</span><span class="card-emoji">🌶️</span></div><h3>Bien picosito</h3><p>Para quienes disfrutan el chilito. Tú decides cuánto aguanta el antojo.</p><a class="order-link" href="#pedido" data-select-item="spicy">Pedir este <span>↓</span></a></article>
+        <article class="menu-card card-green"><div class="card-top"><span class="card-number">03</span><span class="card-emoji">🧀</span></div><h3>Con todo</h3><p>Tu combinación favorita de toppings, hecha justo como la pediste.</p><a class="order-link" href="#pedido" data-select-item="loaded">Pedir este <span>↓</span></a></article>
       </div>
       <p class="menu-footnote">¿Tienes una combinación en mente? <a class="whatsapp-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20esquites.%20%C2%BFMe%20compartes%20el%20men%C3%BA%2C%20precios%20y%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Cuéntanos por WhatsApp <span>↗</span></a></p>
+    </section>
+    <section class="order-form-section section-wrap" id="pedido">
+      <div class="section-heading"><div><p class="eyebrow">PEDIDO EN LÍNEA</p><h2>Arma tu pedido</h2></div><p class="heading-note">Déjanos tus datos para enviar la solicitud. Después confirma los detalles por WhatsApp.</p></div>
+      <form id="order-form" class="order-form">
+        <label>Tu nombre<input name="customerName" autocomplete="name" maxlength="100" required></label>
+        <label>Tu WhatsApp<input name="phone" type="tel" autocomplete="tel" maxlength="30" required></label>
+        <fieldset class="item-picker"><legend>¿Qué se te antoja?</legend>
+          <label class="item-choice"><span>El clásico</span><input name="classic" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Cantidad de El clásico"></label>
+          <label class="item-choice"><span>Bien picosito</span><input name="spicy" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Cantidad de Bien picosito"></label>
+          <label class="item-choice"><span>Con todo</span><input name="loaded" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Cantidad de Con todo"></label>
+        </fieldset>
+        <label class="notes-field">Notas o preferencias (opcional)<textarea name="notes" rows="3" maxlength="500" placeholder="Por ejemplo: poco chile, extra limón…"></textarea></label>
+        <label class="website-trap" aria-hidden="true">No llenar<input name="website" tabindex="-1" autocomplete="off"></label>
+        <label class="consent-field"><input name="consent" type="checkbox" required> Acepto que usen mi nombre y teléfono para gestionar este pedido y contactarme por WhatsApp.</label>
+        <p class="privacy-note">La solicitud se enviará a la hoja privada de pedidos del negocio. No se solicitan datos de pago.</p>
+        <button class="button button-primary" type="submit">Enviar pedido</button>
+        <p id="order-status" class="order-status" role="status" aria-live="polite"></p>
+        <a id="confirm-whatsapp" class="button button-light confirm-whatsapp" hidden target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp ↗</a>
+      </form>
     </section>
     <section class="order-band" id="nosotros"><div class="order-inner"><div class="order-icon">💬</div><div><p class="eyebrow">ASÍ DE FÁCIL</p><h2>Tu próximo antojo<br>está a un mensaje.</h2><p>Escríbenos para consultar el menú, precios, disponibilidad y cómo recoger tu pedido.</p></div><a class="button button-light whatsapp-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20esquites.%20%C2%BFMe%20compartes%20el%20men%C3%BA%2C%20precios%20y%20disponibilidad%3F" target="_blank" rel="noopener noreferrer">Mandar mensaje <span>↗</span></a></div></section>
   </main>
   <footer class="site-footer"><a class="brand" href="#inicio"><span class="brand-mark">🌽</span><span>ESQUITES<span class="brand-sub">AL MOMENTO</span></span></a><p>Un antojo, hecho con cariño. <span>♡</span></p><small>© <span id="year"></span> · Hecho para disfrutar</small></footer>
-  <a class="floating-whatsapp whatsapp-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20pedir%20esquites.%20%C2%BFMe%20compartes%20el%20men%C3%BA%2C%20precios%20y%20disponibilidad%3F" target="_blank" rel="noopener noreferrer" aria-label="Pedir esquites por WhatsApp">☏ <span>Haz tu pedido</span></a>
-  <noscript><p class="noscript">Los enlaces de pedido abren WhatsApp directamente.</p></noscript>
+  <a class="floating-whatsapp whatsapp-link" href="https://wa.me/529983867637?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20los%20esquites." target="_blank" rel="noopener noreferrer" aria-label="Hacer una consulta por WhatsApp">☏ <span>Consulta por WhatsApp</span></a>
+  <noscript><p class="noscript">Para registrar tu pedido en línea, activa JavaScript. También puedes <a href="https://wa.me/529983867637?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20esquites.">escribirnos por WhatsApp</a>.</p></noscript>
 </body>
 </html>
