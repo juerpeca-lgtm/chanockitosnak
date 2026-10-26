@@ -8,6 +8,7 @@
 .item-choice{background:#fffdf7;border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:600}
 .item-choice input{width:62px;padding:9px}
 .notes-field{grid-column:1/-1}
+.delivery-address,.delivery-reference{grid-column:1/-1}
 .privacy-note,.order-status{grid-column:1/-1;margin:0;color:var(--muted);font-size:12px;line-height:1.55}
 .consent-field{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.5;color:var(--muted)}
 .consent-field input{width:auto;margin-top:2px;flex:none}

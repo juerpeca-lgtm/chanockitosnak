@@ -51,6 +51,8 @@
       <form id="order-form" class="order-form">
         <label>Tu nombre<input name="customerName" autocomplete="name" maxlength="100" required></label>
         <label>Tu WhatsApp<input name="phone" type="tel" autocomplete="tel" maxlength="30" required></label>
+        <label class="delivery-address">Dirección de entrega<input name="deliveryAddress" autocomplete="street-address" maxlength="250" placeholder="Calle, número, colonia y ciudad" required></label>
+        <label class="delivery-reference">Referencia de envío (opcional)<input name="deliveryReference" maxlength="250" placeholder="Color de casa, entre calles…"></label>
         <fieldset class="item-picker"><legend>¿Qué se te antoja?</legend>
           <label class="item-choice"><span>El clásico</span><input name="classic" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Cantidad de El clásico"></label>
           <label class="item-choice"><span>Bien picosito</span><input name="spicy" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Cantidad de Bien picosito"></label>
@@ -58,7 +60,7 @@
         </fieldset>
         <label class="notes-field">Notas o preferencias (opcional)<textarea name="notes" rows="3" maxlength="500" placeholder="Por ejemplo: poco chile, extra limón…"></textarea></label>
         <label class="website-trap" aria-hidden="true">No llenar<input name="website" tabindex="-1" autocomplete="off"></label>
-        <label class="consent-field"><input name="consent" type="checkbox" required> Acepto que usen mi nombre y teléfono para gestionar este pedido y contactarme por WhatsApp.</label>
+        <label class="consent-field"><input name="consent" type="checkbox" required> Acepto que usen mi nombre, teléfono y datos de entrega para gestionar este pedido y contactarme por WhatsApp.</label>
         <p class="privacy-note">La solicitud se enviará a la hoja privada de pedidos del negocio. No se solicitan datos de pago.</p>
         <button class="button button-primary" type="submit">Enviar pedido</button>
         <p id="order-status" class="order-status" role="status" aria-live="polite"></p>

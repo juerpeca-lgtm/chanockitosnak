@@ -46,6 +46,8 @@ orderForm.addEventListener("submit", async (event) => {
   const order = {
     customerName: String(formData.get("customerName") || "").trim(),
     phone: String(formData.get("phone") || "").trim(),
+    deliveryAddress: String(formData.get("deliveryAddress") || "").trim(),
+    deliveryReference: String(formData.get("deliveryReference") || "").trim(),
     items,
     notes: String(formData.get("notes") || "").trim(),
     consent: formData.get("consent") === "on",
@@ -65,7 +67,7 @@ orderForm.addEventListener("submit", async (event) => {
     orderStatus.textContent = "El formulario intentó enviar tu pedido, pero no podemos confirmar desde aquí si quedó guardado en la hoja. Confirma por WhatsApp antes de volver a enviarlo.";
     orderStatus.dataset.state = "warning";
     const summary = items.map((item) => `${item.quantity} × ${item.name}`).join(", ");
-    const message = `Hola, soy ${order.customerName}. Acabo de enviar un pedido: ${summary}.${order.notes ? ` Nota: ${order.notes}` : ""} ¿Me confirman disponibilidad?`;
+    const message = `Hola, soy ${order.customerName}. Acabo de enviar un pedido: ${summary}. Dirección de entrega: ${order.deliveryAddress}.${order.deliveryReference ? ` Referencia: ${order.deliveryReference}.` : ""}${order.notes ? ` Nota: ${order.notes}.` : ""} ¿Me confirman disponibilidad?`;
     confirmWhatsApp.href = `https://wa.me/529983867637?text=${encodeURIComponent(message)}`;
     confirmWhatsApp.hidden = false;
   } catch {
